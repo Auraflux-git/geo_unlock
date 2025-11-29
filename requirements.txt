@@ -1,4 +1,4 @@
 fastapi
-uvicorn
+uvicorn[standard]
 gunicorn
 curl_cffi==0.6.2
