@@ -20,7 +20,6 @@ def fetch(url: str):
                 "Connection": "keep-alive",
             },
             timeout=30,
-            http2=True,
         )
         return {
             "status": resp.status_code,
