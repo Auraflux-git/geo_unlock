@@ -2,13 +2,12 @@ from fastapi import FastAPI, HTTPException
 from curl_cffi import requests
 
 app = FastAPI()
-
+session = requests.Session(impersonate='chrome')
 @app.get("/fetch")
 def fetch(url: str):
     try:
-        resp = requests.get(
+        resp = session.get(
             url,
-            impersonate="chrome116",  # Chrome TLS fingerprint
             headers={
                 "User-Agent": (
                     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
